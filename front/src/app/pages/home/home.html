@@ -1,0 +1,42 @@
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center col-lg-12 customHeader1">Enter Player's Name</h1>
+            <div class="col-lg-6 offset-lg-3">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">           
+                <div class="form-group row">
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label" style="margin-top: 2%;">Player 1</label>
+                    <div class="col-sm-9 col-md-9 col-lg-10">  
+                    <input autofocus type="text" formControlName="player1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.player1.errors }" (keyup)="onKey($event)"/>
+                        <div *ngIf="submitted && f.player1.errors" class="invalid-feedback">
+                            <div id="player1NameReq1" *ngIf="f.player1.errors.required">Player 1 Name is required</div>
+                            <div id="player1NameReq2" *ngIf="f.player1.errors.minlength">Player 1 Name must be at least 4 characters</div>
+                            <div id="player1NameReq3" *ngIf="f.player1.errors.maxlength">Player 1 Name can´t be no more than 25 characters</div>         
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group row">
+                    <label class="col-sm-3 col-md-3 col-lg-2 control-label" style="margin-top: 2%;">Player 2</label>
+                    <div class="col-sm-9 col-md-9 col-lg-10"> 
+                        <input type="text" formControlName="player2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.player2.errors }" (keyup)="onKey($event)"/>
+                        <div *ngIf="submitted && f.player2.errors" class="invalid-feedback">
+                            <div id="player2NameReq1" *ngIf="f.player2.errors.required">Player 2 Name is required</div>
+                            <div id="player2NameReq2" *ngIf="f.player2.errors.minlength">Player 2 Name must be at least 4 characters</div>
+                            <div id="player2NameReq3" *ngIf="f.player2.errors.maxlength">Player 2 Name can´t be no more than 25 characters</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group row">
+                    <div style="text-align: center;" class="col-sm-8 offset-sm-4 col-md-8 offset-md-4 col-lg-10 offset-lg-2"> 
+                        <div id="twoPlayerSame" *ngIf="same" style="color: red; text-align: center;">Both players can't have the same name</div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div style="text-align: center;" class="col-sm-8 offset-sm-4 col-md-8 offset-md-4 col-lg-10 offset-lg-2">  
+                        <button [disabled]="loading" class="btn btn-primary">Start</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>

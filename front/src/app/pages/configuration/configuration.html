@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nb-card>
+                <nb-card-header>
+                    <h4>Configuration</h4>
+                </nb-card-header>
+                <nb-card-body>
+                    <toaster-container [toasterconfig]="config"></toaster-container>
+                    <ng2-smart-table [settings]="settings" 
+                        [source]="moves"
+                        (deleteConfirm)="deleteConfirm($event)"
+                        (editConfirm)="editConfirm($event)"
+                        (createConfirm)="createConfirm($event)">
+                    </ng2-smart-table>
+                </nb-card-body>
+            </nb-card>
+        </div>
+        <div style="text-align: right;" class="col-xs-2 offset-xs-10 col-sm-3 offset-sm-9 col-md-2 offset-md-10 col-lg-2 offset-lg-10">
+            <button class="btn btn-primary" (click)="return()">Back</button>     
+        </div>
+    </div>
+</div>

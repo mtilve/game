@@ -1,0 +1,18 @@
+<div class="header-container"
+     [class.left]="position === 'normal'"
+     [class.right]="position === 'inverse'">
+  <div class="logo-containter">
+   <a href="#"><i class="icon ion-ios-game-controller-b" style="color: #8a7fff;font-size: 30px;padding-right: 40px;"></i></a>
+    <div class="logo" style="color: #8a7fff" title="Home" (click)="goToHome()">game-<span>drones</span></div>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions
+    size="medium"
+    [class.right]="position === 'normal'"
+    [class.left]="position === 'inverse'">
+    <nb-action icon="nb-bar-chart" class="newIcon" title="Stats" (click)="_goStats()"></nb-action>
+    <nb-action icon="nb-gear" class="newIcon" title="Configuration" (click)="_goConfiguration()"></nb-action> 
+  </nb-actions>
+</div>
