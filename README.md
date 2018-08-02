@@ -1,8 +1,8 @@
 # front
 
 - Based on ngx-admin - 'Admin template based on Angular 6+, Bootstrap 4 and Nebular' https://github.com/akveo/ngx-admin
-- Unit Test with Jasmin https://jasmine.github.io/ and Karma https://github.com/karma-runner/karma
-- e2e Test with Jasmin and Protractor https://github.com/angular/protractor
+- Unit Test with Jasmine https://jasmine.github.io/ and Karma https://github.com/karma-runner/karma
+- e2e Test with Jasmine and Protractor https://github.com/angular/protractor
 
 * quick start:
   * npm install
